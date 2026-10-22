@@ -3,7 +3,7 @@ name: Daily Email Automation
 on:
   schedule:
     - cron: '0 0 * * *' # 每天 UTC 0 点（北京时间 8 点）发送
-  workflow_dispatch:      # 允许你手动点击按钮触发测试
+  workflow_dispatch:      # 允许手动点击按钮触发测试
 
 jobs:
   send-email:
@@ -20,7 +20,7 @@ jobs:
           secure: true
           username: ${{ secrets.QQ_SMTP_USER }}
           password: ${{ secrets.QQ_SMTP_PASS }}
-          subject: "GitHub Actions 自动化测试邮件"
-          to: ${{ secrets.MY_RECIPIENT }}  # ⚠️ 请把这里改成你要收信的邮箱地址！
+          subject: "来自你的漏风小棉袄" #这里修改标题
+          to: ${{ secrets.MY_RECIPIENT }}  # ⚠️ 请把这里改成要收信的邮箱地址！
           from: QQ邮箱通知机器人
-          body: "亲爱的老爸，早上好~不要忘记读书哦。"
+          body: "亲爱的老爸，早上好~不要忘记读书哦。" #这里修改内容
