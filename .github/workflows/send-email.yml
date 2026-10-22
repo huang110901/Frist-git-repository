@@ -23,4 +23,4 @@ jobs:
           subject: "GitHub Actions 自动化测试邮件"
           to: ${{ secrets.MY_RECIPIENT }}  # ⚠️ 请把这里改成你要收信的邮箱地址！
           from: QQ邮箱通知机器人
-          body: "亲爱的老爸，晚上好~这一封自动化测试邮件，以后每天早上会向你问好哦"
+          body: "亲爱的老爸，早上好~不要忘记读书哦。"
