@@ -21,6 +21,6 @@ jobs:
           username: ${{ secrets.QQ_SMTP_USER }}
           password: ${{ secrets.QQ_SMTP_PASS }}
           subject: "GitHub Actions 自动化测试邮件"
-          to: 1540006892@qq.com  # ⚠️ 请把这里改成你要收信的邮箱地址！
+          to: ${{ secrets.MY_RECIPIENT }}  # ⚠️ 请把这里改成你要收信的邮箱地址！
           from: QQ邮箱通知机器人
-          body: "恭喜！你的 GitHub Actions 邮件自动化配置成功，这是第一封测试邮件。"
+          body: "亲爱的老爸，晚上好~这一封自动化测试邮件，以后每天早上会向你问好哦"
