@@ -1,0 +1,26 @@
+name: Daily Email Automation
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 0 点（北京时间 8 点）发送
+  workflow_dispatch:      # 允许你手动点击按钮触发测试
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Send mail via QQ
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.qq.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.QQ_SMTP_USER }}
+          password: ${{ secrets.QQ_SMTP_PASS }}
+          subject: "GitHub Actions 自动化测试邮件"
+          to: 1540006892@qq.com  # ⚠️ 请把这里改成你要收信的邮箱地址！
+          from: QQ邮箱通知机器人
+          body: "恭喜！你的 GitHub Actions 邮件自动化配置成功，这是第一封测试邮件。"
